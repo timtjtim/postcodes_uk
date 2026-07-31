@@ -8,7 +8,6 @@ Requirements :
 
 # How to install it ?
 
-
 ## Using PIP
 
     pip install postcodes-uk
@@ -18,7 +17,7 @@ Requirements :
 In the root folder execute :
 
     python setup.py install
-    
+
 # How to use it ?
 
 ## Validate a postcode
@@ -33,20 +32,24 @@ This will return a boolean with the validation result.
     from postcodes_uk import Postcode
     postcode = Postcode(area="EC", district="1A", sector=1, unit="BB")
     print(postcode)
-    
+
  This will print the formatted postcode.
- 
+
  ## Create a Postcode object from a string
- 
+
     from postcodes_uk import Postcode
     postcode = Postcode.from_string("EC1A 1BB")
     print(postcode.area)
-    
+
 This could be useful to extract the area/district/sector/unit from the postcode.
-    
-    
+
+
 # How to execute the tests ?
 
-In the root folder, execute :
+In the root folder, execute:
+
+    pip install -e ".[dev]"
+
+and then
 
     pytest

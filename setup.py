@@ -19,7 +19,9 @@ VERSION = "1.0.1"
 
 
 # Packages that are required for this module to be executed
-def list_reqs(fname='requirements.txt'):
+def list_reqs(fname=None):
+    fname = f"requirements-{fname}.txt" if fname else "requirements.txt"
+    print (fname)
     with open(fname) as fd:
         return fd.read().splitlines()
 
@@ -67,7 +69,9 @@ setup(
     packages=find_packages(exclude=('tests',)),
     package_data={'postcodes_uk': ['VERSION']},
     install_requires=list_reqs(),
-    extras_require={},
+    extras_require={
+        "dev": list_reqs("dev"),
+    },
     include_package_data=True,
     license='BSD 3',
     classifiers=[

@@ -75,3 +75,6 @@ MANIFEST
 .venv*/
 /local_files/
 local_files/
+
+# vscode
+.vscode
